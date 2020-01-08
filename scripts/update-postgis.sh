@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 # postgis w/all exts
-psql -v ON_ERROR_STOP=1 --username docker --dbname docker <<-EOSQL
+psql -v ON_ERROR_STOP=1 --username docker --dbname accessor <<-EOSQL
     ALTER EXTENSION postgis UPDATE;
     ALTER EXTENSION postgis_raster UPDATE;
     ALTER EXTENSION postgis_topology UPDATE;
