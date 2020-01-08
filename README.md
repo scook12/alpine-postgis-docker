@@ -27,7 +27,7 @@ These two get you into a psql prompt:
 
 `sh -c "exec psql -h '$POSTGRES_PORT_5432_TCP_ADDR' -p '$POSTGRES_PORT_5432_TCP_PORT' -U postgres"`
 
-Then run `dx` which should show plpgsql and postgis version 2.5.3 in a list of installed extensions.
+Then run `\dx` which should show plpgsql and postgis version 2.5.3 in a list of installed extensions.
 
 ## Contributing
 
