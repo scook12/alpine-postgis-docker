@@ -14,7 +14,6 @@ RUN chown -R postgres:postgres "/var/lib/postgresql"
 
 RUN apk update && apk upgrade
 RUN apk add --no-cache -U postgresql=11.6-r0
-#RUN echo "installed"
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 EXPOSE 5432
