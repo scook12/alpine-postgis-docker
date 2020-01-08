@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 # postgis w/all exts
-psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname accessor <<-EOSQL
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
     CREATE EXTENSION postgis;
     CREATE EXTENSION postgis_raster;
     CREATE EXTENSION postgis_topology;
