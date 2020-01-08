@@ -22,10 +22,9 @@ RUN apk add --no-cache --virtual .build-deps-edge gdal-dev geos-dev proj-dev pro
 
 RUN cd /usr/src/postgis && ./autogen.sh && ./configure && make && make install
 RUN apk add --no-cache --virtual .postgis-rundeps json-c 
-RUN apk add --no-cache --virtual .postgis-rundeps-edge geos gdal proj protobuf-c
-RUN apk del .fetch-deps .build-deps .build-deps-edge 
+RUN apk add --no-cache --virtual .postgis-rundeps-edge geos gdal proj protobuf-c 
 
 RUN cd / && mkdir -p /docker-entrypoint-initdb.d
 COPY /scripts/add-user.sh /docker-entrypoint-initdb.d/add-user.sh
 COPY /scripts/postgis.sh /docker-entrypoint-initdb.d/postgis.sh
-COPY /scripts/update-postgis.sh /usr/local/bin
+COPY /scripts/update-postgis.sh /docker-entrypoint-initdb.d/update.sh
