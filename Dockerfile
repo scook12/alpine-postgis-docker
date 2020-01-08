@@ -9,13 +9,12 @@ COPY ./scripts/postgis.sh /docker-entrypoint-initdb.d
 COPY ./scripts/update-postgis.sh /docker-entrypoint-initdb.d
 
 RUN set -ex
-RUN postgres_home="/var/lib/postgresql"
-RUN mkdir -p "$postgres_home"
-RUN chown -R postgres:postgres "$postgres_home"
+RUN mkdir -p "/var/lib/postgresql"
+RUN chown -R postgres:postgres "/var/lib/postgresql"
 
 RUN apk update && apk upgrade
 RUN apk add --no-cache -U postgresql=11.6-r0
-RUN echo "installed"
+#RUN echo "installed"
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 EXPOSE 5432
