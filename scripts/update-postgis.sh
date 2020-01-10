@@ -3,7 +3,6 @@ set -e
 # postgis w/all exts
 psql -v ON_ERROR_STOP=1 --username docker --dbname accessor <<-EOSQL
     ALTER EXTENSION postgis UPDATE;
-    ALTER EXTENSION postgis_raster UPDATE;
     ALTER EXTENSION postgis_topology UPDATE;
     ALTER EXTENSION postgis_sfcgal UPDATE;
     ALTER EXTENSION fuzzystrmatch UPDATE;
