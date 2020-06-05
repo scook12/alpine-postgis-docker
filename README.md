@@ -3,9 +3,7 @@
 Simple alpine postgis Dockerfile - lightweight and easy to use. Makes use of apk's packages unlike
 most of the postgis dockerfiles.
 
-NOTE: Recent changes have broken the build. Hold off on using this until it gets more mature. Will
-likely be considered stable at release 0.5.0, which is a while away.
-
+NOTE: Recent changes have broken the build, don't use this for anything yet. Will mark as release 1.0.0 when it's stable.
 ## Setup
 
 From source:
